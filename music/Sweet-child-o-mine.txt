@@ -88,60 +88,65 @@
 #define NOTE_D8  4699
 #define NOTE_DS8 4978
 
-//Sweet Child O Mine- Guns N Roses-------------------------------------------------------------------------------------------------------------------------------
+//Sweet Child O Mine - Guns N Roses-------------------------------------------------------------------------------------------------------------------------------
+// Notes
 int mainRiffD[] = {NOTE_D4 , NOTE_D5 , NOTE_A4, NOTE_G4, NOTE_G5, NOTE_A4, NOTE_FS5, NOTE_A4};
 int mainRiffE[] = {NOTE_E4 , NOTE_D5 , NOTE_A4, NOTE_G4, NOTE_G5, NOTE_A4, NOTE_FS5, NOTE_A4};
 int mainRiffG[] = {NOTE_G4 , NOTE_D5 , NOTE_A4, NOTE_G4, NOTE_G5, NOTE_A4, NOTE_FS5, NOTE_A4};
-    
+
 int mainRiffDurations[] = {
 //d4  d5  a4   g4  g5  g4  fs5  a4  
   6,  6,  6,   6,  6,  6,  6 ,  6};
+
+// Buzzer
+int speakerPin = 13;
 //----------------------------------------------------------------------------------------------------------------------------------------------
+
 void setup() {
 
-for(int introTwoTimes = 0; introTwoTimes < 2; introTwoTimes++){
-  for(int dTwice = 0; dTwice < 2; dTwice++){
-    for (int thisNote = 0; thisNote < 8; thisNote++){
-      int mainRiffDuration = 1000/mainRiffDurations[thisNote];
-      tone(13, mainRiffD[thisNote], mainRiffDuration);
-      int pauseBetweenNotes = mainRiffDuration * 1.30;
-      delay(pauseBetweenNotes);
-      noTone(13);
+  for(int introTwoTimes = 0; introTwoTimes < 2; introTwoTimes++){
+    for(int dTwice = 0; dTwice < 2; dTwice++){
+      for (int thisNote = 0; thisNote < 8; thisNote++){
+        int mainRiffDuration = 1000/mainRiffDurations[thisNote];
+        tone(speakerPin, mainRiffD[thisNote], mainRiffDuration);
+        int pauseBetweenNotes = mainRiffDuration * 1.30;
+        delay(pauseBetweenNotes);
+        noTone(speakerPin);
+      }
+    }
+    
+    for(int eTwice = 0; eTwice < 2; eTwice++){
+      for (int thisNote = 0; thisNote < 8; thisNote++){
+        int mainRiffDuration = 1000/mainRiffDurations[thisNote];
+        tone(speakerPin, mainRiffE[thisNote], mainRiffDuration);
+        int pauseBetweenNotes = mainRiffDuration * 1.30;
+        delay(pauseBetweenNotes);
+        noTone(speakerPin);
+      }
+    }
+    
+    for(int gTwice = 0; gTwice < 2; gTwice++){
+      for (int thisNote = 0; thisNote < 8; thisNote++){
+        int mainRiffDuration = 1000/mainRiffDurations[thisNote];
+        tone(speakerPin, mainRiffG[thisNote], mainRiffDuration);
+        int pauseBetweenNotes = mainRiffDuration * 1.30;
+        delay(pauseBetweenNotes);
+        noTone(speakerPin);
+      }
+    }
+    
+    for(int dTwice = 0; dTwice < 2; dTwice++){
+      for (int thisNote = 0; thisNote < 8; thisNote++){
+        int mainRiffDuration = 1000/mainRiffDurations[thisNote];
+        tone(speakerPin, mainRiffD[thisNote], mainRiffDuration);
+        int pauseBetweenNotes = mainRiffDuration * 1.30;
+        delay(pauseBetweenNotes);
+        noTone(speakerPin);
+      }
     }
   }
-  
-  for(int eTwice = 0; eTwice < 2; eTwice++){
-    for (int thisNote = 0; thisNote < 8; thisNote++){
-      int mainRiffDuration = 1000/mainRiffDurations[thisNote];
-      tone(13, mainRiffE[thisNote], mainRiffDuration);
-      int pauseBetweenNotes = mainRiffDuration * 1.30;
-      delay(pauseBetweenNotes);
-      noTone(13);
-    }
-  }
-  
-  for(int gTwice = 0; gTwice < 2; gTwice++){
-    for (int thisNote = 0; thisNote < 8; thisNote++){
-      int mainRiffDuration = 1000/mainRiffDurations[thisNote];
-      tone(13, mainRiffG[thisNote], mainRiffDuration);
-      int pauseBetweenNotes = mainRiffDuration * 1.30;
-      delay(pauseBetweenNotes);
-      noTone(13);
-    }
-  }
-  
-  for(int dTwice = 0; dTwice < 2; dTwice++){
-    for (int thisNote = 0; thisNote < 8; thisNote++){
-      int mainRiffDuration = 1000/mainRiffDurations[thisNote];
-      tone(13, mainRiffD[thisNote], mainRiffDuration);
-      int pauseBetweenNotes = mainRiffDuration * 1.30;
-      delay(pauseBetweenNotes);
-      noTone(13);
-    }
-  }
-}
 
-while(1); // stop song
+  while(1); // stop song
 }
     
 void loop() {
