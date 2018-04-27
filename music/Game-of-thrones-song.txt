@@ -212,13 +212,35 @@ void GameOfThrones() {
 
     tone(speakerPin, NOTE_G4);
     ilumina(NOTE_G4);
-    delay(500);
+    delay(1500);
     noTone(speakerPin);
     apaga(NOTE_G4);
 
     tone(speakerPin, NOTE_C4);
     ilumina(NOTE_C4);
-    delay(500);
+    delay(1500);
+    apaga(NOTE_C4);
+
+//
+    tone(speakerPin, NOTE_E4);
+    ilumina(NOTE_E4);
+    delay(250);
+    apaga(NOTE_C4);
+
+    tone(speakerPin, NOTE_F4);
+    ilumina(NOTE_F4);
+    delay(250);
+    apaga(NOTE_C4);
+//
+    tone(speakerPin, NOTE_G4);
+    ilumina(NOTE_G4);
+    delay(1000);
+    noTone(speakerPin);
+    apaga(NOTE_G4);
+
+    tone(speakerPin, NOTE_C4);
+    ilumina(NOTE_C4);
+    delay(1000);
     apaga(NOTE_C4);
 
     tone(speakerPin, NOTE_DS4);
@@ -232,14 +254,15 @@ void GameOfThrones() {
     delay(250);
     noTone(speakerPin);
     apaga(NOTE_F4);
-
+    
+  for(int i=0; i<3; i++) {
+    
     tone(speakerPin, NOTE_D4);
     ilumina(NOTE_D4);
     delay(500);
     noTone(speakerPin);
     apaga(NOTE_D4);
-
-  for(int i=0; i<3; i++) {
+    
     tone(speakerPin, NOTE_G3);
     ilumina(NOTE_G3);
     delay(500);
@@ -257,41 +280,21 @@ void GameOfThrones() {
     delay(250);
     noTone(speakerPin);
     apaga(NOTE_C4);
+    
+    
+  }
+  
 
-    tone(speakerPin, NOTE_D4);
-    ilumina(NOTE_D4);
-    delay(500);
-    noTone(speakerPin);
-    apaga(NOTE_D4);
-  }//
-
-      tone(speakerPin, NOTE_G3);
-      ilumina(NOTE_G3);
-      delay(500);
-      noTone(speakerPin);
-      apaga(NOTE_G3);
-
-      tone(speakerPin, NOTE_AS3);
-      ilumina(NOTE_AS3);
-      delay(250);
-      noTone(speakerPin);
-      apaga(NOTE_AS3);
-
-      tone(speakerPin, NOTE_C4);
-      ilumina(NOTE_C4);
-      delay(250);
-      noTone(speakerPin);
-      apaga(NOTE_C4);
 
       tone(speakerPin, NOTE_D4);
       ilumina(NOTE_D4);
-      delay(1000);
+      delay(1500);
       noTone(speakerPin);
       apaga(NOTE_D4);
       
       tone(speakerPin, NOTE_F4);
       ilumina(NOTE_F4);
-      delay(1000);
+      delay(1500);
       noTone(speakerPin);
       apaga(NOTE_F4);
 
@@ -449,3 +452,4 @@ void GameOfThrones() {
     apaga(NOTE_D4);
   }
 }
+
